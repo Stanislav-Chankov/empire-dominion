@@ -1,0 +1,73 @@
+<div
+  class="overlay"
+  role="dialog"
+  aria-label="Inventory"
+  (pointerdown)="$event.stopPropagation()"
+  (click)="$event.stopPropagation()"
+  (wheel)="$event.stopPropagation()"
+>
+  <div class="backdrop" (pointerdown)="$event.stopPropagation()" (click)="$event.stopPropagation(); close()"></div>
+
+  <div class="window" (pointerdown)="$event.stopPropagation()" (click)="$event.stopPropagation()" (wheel)="$event.stopPropagation()">
+    <header class="window__header">
+      <div class="title">
+        <div class="title__top">{{ hero.raceClass }}</div>
+        <div class="title__bottom">{{ hero.HeroName }}</div>
+      </div>
+
+      <button class="close" type="button" (click)="close()" aria-label="Close">
+        ✕
+      </button>
+    </header>
+
+    <div class="content">
+      <aside class="gear gear--left" aria-label="Equipment left side">
+        @for (slot of leftSlots; track slot) {
+          <div class="slot" [attr.data-slot]="slot" [class.slot--empty]="!equipment[slot]">
+            <div class="slot__label">{{ slot }}</div>
+            @if (equipment[slot]) {
+              <div class="slot__item" [title]="equipment[slot]!.name">{{ equipment[slot]!.name }}</div>
+            } @else {
+              <div class="slot__item slot__item--empty">Empty</div>
+            }
+          </div>
+        }
+      </aside>
+
+      <section class="paperdoll" aria-label="Hero visualization">
+        <div class="paperdoll__figure" aria-label="Hero model">
+          <div class="paperdoll__glow"></div>
+          <div class="paperdoll__silhouette"></div>
+        </div>
+
+        <div class="weapons" aria-label="Weapons">
+          @for (slot of weaponSlots; track slot) {
+            <div class="slot slot--weapon" [attr.data-slot]="slot" [class.slot--empty]="!equipment[slot]">
+              <div class="slot__label">{{ slot }}</div>
+              @if (equipment[slot]) {
+                <div class="slot__item" [title]="equipment[slot]!.name">{{ equipment[slot]!.name }}</div>
+              } @else {
+                <div class="slot__item slot__item--empty">Empty</div>
+              }
+            </div>
+          }
+        </div>
+      </section>
+
+      <aside class="gear gear--right" aria-label="Equipment right side">
+        @for (slot of rightSlots; track slot) {
+          <div class="slot" [attr.data-slot]="slot" [class.slot--empty]="!equipment[slot]">
+            <div class="slot__label">{{ slot }}</div>
+            @if (equipment[slot]) {
+              <div class="slot__item" [title]="equipment[slot]!.name">{{ equipment[slot]!.name }}</div>
+            } @else {
+              <div class="slot__item slot__item--empty">Empty</div>
+            }
+          </div>
+        }
+      </aside>
+    </div>
+  </div>
+</div>
+
+

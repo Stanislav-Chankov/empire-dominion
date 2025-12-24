@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "resources": [
+    {
+      "id": "grain",
+      "name": "Grain",
+      "category": "food",
+      "tier": 1,
+      "description": "Staple food used for rations, troop upkeep, and basic cooking.",
+      "usedByProfessions": ["farming", "cooking"]
+    },
+    {
+      "id": "meat",
+      "name": "Meat",
+      "category": "food",
+      "tier": 1,
+      "description": "Hunted or farmed protein used for meals and high-value rations.",
+      "usedByProfessions": ["cooking", "skinning"]
+    },
+    {
+      "id": "cattle",
+      "name": "Cattle",
+      "category": "livestock",
+      "tier": 1,
+      "description": "Farm animal used for reliable meat supply and trade. In later systems this can also produce secondary goods (e.g., hides, milk).",
+      "usedByProfessions": ["farming", "cooking", "skinning", "leatherworking"]
+    },
+    {
+      "id": "sheep",
+      "name": "Sheep",
+      "category": "livestock",
+      "tier": 1,
+      "description": "Farm animal used for meat and crafting materials. Often tied to safe starter economies.",
+      "usedByProfessions": ["farming", "cooking", "skinning", "leatherworking"]
+    },
+    {
+      "id": "poultry",
+      "name": "Poultry",
+      "category": "livestock",
+      "tier": 1,
+      "description": "Farm animal used for quick, low-cost food production and camp rations.",
+      "usedByProfessions": ["farming", "cooking"]
+    },
+    {
+      "id": "goat_livestock",
+      "name": "Goat",
+      "category": "livestock",
+      "tier": 1,
+      "description": "Hardy livestock suited for rough climates and trade routes. Provides steady food and crafting materials.",
+      "usedByProfessions": ["farming", "cooking", "skinning", "leatherworking"]
+    },
+    {
+      "id": "deer_game",
+      "name": "Deer (Game)",
+      "category": "wildlife",
+      "tier": 1,
+      "description": "Wild game source that provides meat and hides. Best gathered via hunting routes and worker camps.",
+      "usedByProfessions": ["skinning", "cooking"]
+    },
+    {
+      "id": "boar_game",
+      "name": "Boar (Game)",
+      "category": "wildlife",
+      "tier": 1,
+      "description": "Wild game source with higher risk. Provides meat and hides; often found near forests and swamps.",
+      "usedByProfessions": ["skinning", "cooking"]
+    },
+    {
+      "id": "fish",
+      "name": "Fish",
+      "category": "food",
+      "tier": 1,
+      "description": "Coastal and river food source used in cooking and trade.",
+      "usedByProfessions": ["fishing", "cooking"]
+    },
+    {
+      "id": "fruit",
+      "name": "Fruit",
+      "category": "food",
+      "tier": 1,
+      "description": "Fertile-zone ingredient used in meals, preserves, and potions.",
+      "usedByProfessions": ["farming", "cooking", "alchemy"]
+    },
+    {
+      "id": "fresh_water",
+      "name": "Fresh Water",
+      "category": "water",
+      "tier": 1,
+      "description": "Common water used for cooking, basic alchemy, and camps.",
+      "usedByProfessions": ["alchemy", "cooking"]
+    },
+    {
+      "id": "spring_water",
+      "name": "Spring Water",
+      "category": "water",
+      "tier": 2,
+      "description": "Cleaner water used for higher quality potions and meals.",
+      "usedByProfessions": ["alchemy", "cooking"]
+    },
+    {
+      "id": "timber",
+      "name": "Timber",
+      "category": "wood",
+      "tier": 1,
+      "description": "Baseline wood for camps, tools, and basic logistics.",
+      "usedByProfessions": ["lumbering", "engineering"]
+    },
+    {
+      "id": "hardwood",
+      "name": "Hardwood",
+      "category": "wood",
+      "tier": 2,
+      "description": "Dense wood for strong structures, staves, and wagons.",
+      "usedByProfessions": ["lumbering", "engineering"]
+    },
+    {
+      "id": "ancient_wood",
+      "name": "Ancient Wood",
+      "category": "wood",
+      "tier": 3,
+      "description": "Rare magical wood used for high-end staves and relic crafts.",
+      "usedByProfessions": ["lumbering", "enchanting"]
+    },
+    {
+      "id": "clay",
+      "name": "Clay",
+      "category": "stone_clay",
+      "tier": 1,
+      "description": "Staple building input for bricks, walls, and basic structures.",
+      "usedByProfessions": ["engineering"]
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "category": "stone_clay",
+      "tier": 1,
+      "description": "Construction material used for fortifications and crafting stations.",
+      "usedByProfessions": ["mining", "engineering"]
+    },
+    {
+      "id": "limestone",
+      "name": "Limestone",
+      "category": "stone_clay",
+      "tier": 2,
+      "description": "Refined stone used for stronger structures and advanced camps.",
+      "usedByProfessions": ["mining", "engineering"]
+    },
+    {
+      "id": "copper_ore",
+      "name": "Copper Ore",
+      "category": "ore",
+      "tier": 1,
+      "description": "Early metal ore used for basic tools and components.",
+      "usedByProfessions": ["mining", "blacksmithing", "engineering"]
+    },
+    {
+      "id": "tin_ore",
+      "name": "Tin Ore",
+      "category": "ore",
+      "tier": 1,
+      "description": "Early alloying ore used for bronze-grade components.",
+      "usedByProfessions": ["mining", "blacksmithing"]
+    },
+    {
+      "id": "iron_ore",
+      "name": "Iron Ore",
+      "category": "ore",
+      "tier": 2,
+      "description": "Core metal ore used for weapons, armor, and troop supplies.",
+      "usedByProfessions": ["mining", "blacksmithing", "armorsmithing", "engineering"]
+    },
+    {
+      "id": "mithril_ore",
+      "name": "Mithril Ore",
+      "category": "ore",
+      "tier": 3,
+      "description": "High-grade ore used for elite equipment and durable components.",
+      "usedByProfessions": ["mining", "blacksmithing", "armorsmithing"]
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "category": "ore",
+      "tier": 3,
+      "description": "Volcanic glass used for sharp edges, catalysts, and ritual crafts.",
+      "usedByProfessions": ["mining", "engineering", "enchanting"]
+    },
+    {
+      "id": "sulfur",
+      "name": "Sulfur",
+      "category": "reagent",
+      "tier": 2,
+      "description": "Explosive and chemical reagent used in engineering and alchemy.",
+      "usedByProfessions": ["mining", "engineering", "alchemy"]
+    },
+    {
+      "id": "raw_gems",
+      "name": "Raw Gems",
+      "category": "gems",
+      "tier": 2,
+      "description": "Uncut gems used for jewelry and socketed upgrades.",
+      "usedByProfessions": ["mining", "jewelcrafting"]
+    },
+    {
+      "id": "mana_crystals",
+      "name": "Mana Crystals",
+      "category": "magic",
+      "tier": 3,
+      "description": "Magical crystals used to power enchants and advanced reagents.",
+      "usedByProfessions": ["enchanting", "alchemy"]
+    },
+    {
+      "id": "runestones",
+      "name": "Runestones",
+      "category": "magic",
+      "tier": 3,
+      "description": "Carved stones that stabilize enchantments and glyph-like effects.",
+      "usedByProfessions": ["enchanting"]
+    },
+    {
+      "id": "flax",
+      "name": "Flax",
+      "category": "fiber",
+      "tier": 1,
+      "description": "Common fiber used for linen and early tailoring.",
+      "usedByProfessions": ["farming", "tailoring"]
+    },
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "category": "fiber",
+      "tier": 1,
+      "description": "Soft fiber used for cloth and bandage-type crafts.",
+      "usedByProfessions": ["tailoring"]
+    },
+    {
+      "id": "silkweed",
+      "name": "Silkweed",
+      "category": "fiber",
+      "tier": 2,
+      "description": "Rare plant fiber used for stronger cloth and magical fabrics.",
+      "usedByProfessions": ["tailoring", "enchanting"]
+    },
+    {
+      "id": "dye_pigments",
+      "name": "Dye Pigments",
+      "category": "reagent",
+      "tier": 1,
+      "description": "Color pigments used to finish cloth, banners, and cosmetics.",
+      "usedByProfessions": ["tailoring"]
+    },
+    {
+      "id": "light_hide",
+      "name": "Light Hide",
+      "category": "hide",
+      "tier": 1,
+      "description": "Common hide used for early leather gear and straps.",
+      "usedByProfessions": ["skinning", "leatherworking", "armorsmithing"]
+    },
+    {
+      "id": "heavy_hide",
+      "name": "Heavy Hide",
+      "category": "hide",
+      "tier": 2,
+      "description": "Thick hide used for durable leather armor and kits.",
+      "usedByProfessions": ["skinning", "leatherworking", "armorsmithing"]
+    },
+    {
+      "id": "scales",
+      "name": "Scales",
+      "category": "hide",
+      "tier": 3,
+      "description": "Monster scales used for high-end armor and resist gear.",
+      "usedByProfessions": ["skinning", "leatherworking"]
+    },
+    {
+      "id": "herbs_common",
+      "name": "Common Herbs",
+      "category": "herb",
+      "tier": 1,
+      "description": "Basic medicinal herbs used for potions and food seasoning.",
+      "usedByProfessions": ["herbalism", "alchemy", "cooking"]
+    },
+    {
+      "id": "herbs_rare",
+      "name": "Rare Herbs",
+      "category": "herb",
+      "tier": 2,
+      "description": "Potent herbs used for higher tier alchemy and enchanting reagents.",
+      "usedByProfessions": ["herbalism", "alchemy", "enchanting"]
+    },
+    {
+      "id": "resin_oil",
+      "name": "Resin & Oil",
+      "category": "reagent",
+      "tier": 2,
+      "description": "Binding oils and resins used for engineering, weapon oils, and crafting glue.",
+      "usedByProfessions": ["herbalism", "lumbering", "engineering", "alchemy"]
+    },
+    {
+      "id": "arcane_dust",
+      "name": "Arcane Dust",
+      "category": "magic",
+      "tier": 2,
+      "description": "Basic enchanting reagent used to apply minor gear enhancements.",
+      "usedByProfessions": ["enchanting"]
+    },
+    {
+      "id": "primal_essence",
+      "name": "Primal Essence",
+      "category": "magic",
+      "tier": 3,
+      "description": "Condensed essence used for strong enchants and powerful alchemy.",
+      "usedByProfessions": ["enchanting", "alchemy"]
+    },
+    {
+      "id": "soul_shard",
+      "name": "Soul Shard",
+      "category": "magic",
+      "tier": 4,
+      "description": "Rare endgame reagent used for premium enchantments and rituals.",
+      "usedByProfessions": ["enchanting", "alchemy"]
+    },
+    {
+      "id": "salt",
+      "name": "Salt",
+      "category": "reagent",
+      "tier": 1,
+      "description": "Food preservative and alchemy input; also a key trade good in arid zones.",
+      "usedByProfessions": ["cooking", "alchemy", "fishing"]
+    },
+    {
+      "id": "peat",
+      "name": "Peat",
+      "category": "reagent",
+      "tier": 1,
+      "description": "Swamp fuel and soil additive used for early industry and camps.",
+      "usedByProfessions": ["engineering", "farming"]
+    }
+  ]
+}
+
+

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a1a05"/>
+      <stop offset="1" stop-color="#050302"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="55%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#f59e0b" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="slashes" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+      <rect width="26" height="26" fill="none"/>
+      <path d="M0 26 L26 0" stroke="#f59e0b" stroke-opacity="0.10" stroke-width="6"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#glow)"/>
+  <rect width="1200" height="800" fill="url(#slashes)"/>
+  <path d="M0 650 C260 540, 420 770, 760 630 C980 540, 1040 560, 1200 500 L1200 800 L0 800 Z" fill="#000" opacity="0.38"/>
+</svg>
+
+

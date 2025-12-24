@@ -1,0 +1,81 @@
+<div class="page" aria-label="Authentication">
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <main class="window" role="main" aria-label="Login">
+    <header class="window__header">
+      <div class="title">
+        <div class="title__top">Authentication</div>
+        <div class="title__bottom">Login</div>
+      </div>
+
+      <a class="close" role="button" tabindex="0" (click)="continue()" aria-label="Continue to game"
+        >✕</a
+      >
+    </header>
+
+    <form class="content" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="hint">
+        Use your account credentials. This screen is wired as a UI route; connect your real auth API in
+        <code>LoginComponent.submit()</code>.
+      </div>
+
+      <div class="field">
+        <label class="label" for="ed-login-user">Username</label>
+        <input
+          id="ed-login-user"
+          class="input"
+          type="text"
+          formControlName="username"
+          autocomplete="username"
+          placeholder="Enter username"
+        />
+        @if (usernameCtrl.touched && usernameCtrl.invalid) {
+          <div class="error">Username is required.</div>
+        }
+      </div>
+
+      <div class="field">
+        <label class="label" for="ed-login-pass">Password</label>
+        <div class="password">
+          <input
+            id="ed-login-pass"
+            class="input"
+            [type]="showPassword() ? 'text' : 'password'"
+            formControlName="password"
+            autocomplete="current-password"
+            placeholder="Enter password"
+          />
+          <button class="pw-toggle" type="button" (click)="toggleShowPassword()">
+            {{ showPassword() ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+        @if (passwordCtrl.touched && passwordCtrl.invalid) {
+          <div class="error">
+            @if (passwordCtrl.errors?.['required']) {
+              <span>Password is required.</span>
+            } @else if (passwordCtrl.errors?.['minlength']) {
+              <span>Password must be at least 6 characters.</span>
+            } @else {
+              <span>Invalid password.</span>
+            }
+          </div>
+        }
+      </div>
+
+      <label class="remember">
+        <input class="remember__box" type="checkbox" formControlName="remember" />
+        <span class="remember__text">Remember me</span>
+      </label>
+
+      <button class="btn" type="submit" [disabled]="submitting()">
+        {{ submitting() ? 'Signing in…' : 'Sign in' }}
+      </button>
+
+      <div class="footer">
+        <a class="link" role="button" tabindex="0" (click)="continue()">Continue</a>
+      </div>
+    </form>
+  </main>
+</div>
+
+

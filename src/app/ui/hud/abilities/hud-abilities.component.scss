@@ -1,0 +1,80 @@
+.abilities__row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  padding: 10px;
+}
+
+.ability {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 9px;
+  display: grid;
+  gap: 8px;
+}
+
+.ability:hover {
+  border-color: rgba(0, 255, 0, 0.28);
+  background: rgba(0, 255, 0, 0.06);
+}
+
+.ability__icon {
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 0, 0.18);
+  background:
+    radial-gradient(circle at 25% 20%, rgba(0, 255, 0, 0.16), transparent 55%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+.ability__name {
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ability__sub {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(231, 236, 255, 0.75);
+}
+
+.ability__cd {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ability__cdShade {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.ability__cdText {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 22px rgba(0, 0, 0, 0.6);
+}
+
+

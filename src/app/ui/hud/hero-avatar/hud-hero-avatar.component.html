@@ -1,0 +1,38 @@
+<div class="hero__content">
+  <div class="hero__portrait" aria-label="Hero portrait">
+    <div class="hero__level">Lv {{ hero.stats.level }}</div>
+  </div>
+
+  <div class="hero__bars">
+    <div class="hero__name">
+      <div class="hero__nameTitle">{{ hero.raceClass }}</div>
+      <div class="hero__nameSub">{{ hero.HeroName }}</div>
+    </div>
+
+    <div class="bar hp">
+      <div class="bar__fill" [style.width.%]="(hero.stats.hp.current / hero.stats.hp.max) * 100"></div>
+      <div class="bar__text">
+        {{ hero.stats.hp.current }} / {{ hero.stats.hp.max }}
+        <span class="bar__regen">+{{ hero.stats.hp.regen }}</span>
+      </div>
+    </div>
+
+    <div class="bar mana">
+      <div class="bar__fill" [style.width.%]="(hero.stats.mana.current / hero.stats.mana.max) * 100"></div>
+      <div class="bar__text">
+        {{ hero.stats.mana.current }} / {{ hero.stats.mana.max }}
+        <span class="bar__regen">+{{ hero.stats.mana.regen }}</span>
+      </div>
+    </div>
+
+    <div class="bar xp" aria-label="Experience">
+      <div class="bar__fill" [style.width.%]="(hero.stats.xp.current / hero.stats.xp.max) * 100"></div>
+      <div class="bar__text">
+        <span class="bar__label">XP</span>
+        <span>{{ hero.stats.xp.current }} / {{ hero.stats.xp.max }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+

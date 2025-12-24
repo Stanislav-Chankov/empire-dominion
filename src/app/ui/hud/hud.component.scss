@@ -1,0 +1,8 @@
+.hud {
+  pointer-events: none; // let the map still receive drag/zoom unless user interacts with HUD elements
+  position: absolute;
+  inset: 0;
+  display: block;
+  color: var(--ed-text);
+  font-family: var(--ed-font-ui);
+}

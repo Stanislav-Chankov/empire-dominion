@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use './styles/theme/variables';
+@use './styles/theme/hud';
+
+/* Remove browser default body margin (prevents the white frame around the app). */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--ed-bg);
+  overflow: hidden; /* prevent document-level scrolling; internal panels handle their own scroll */
+}
+
+/* Top-right toasts (match the black + green HUD aesthetic). */
+app-toast-container {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.ed-toast-host {
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+
+.ed-toast {
+  pointer-events: auto;
+  max-width: min(420px, calc(100vw - 28px));
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: var(--ed-panel-border-width) solid rgb(var(--ed-accent-rgb) / 0.22);
+  background: rgb(var(--ed-bg-rgb) / 0.82);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+  color: rgb(var(--ed-text-rgb) / 0.92);
+  font-family: var(--ed-font-ui);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.ed-toast[data-kind='error'] {
+  border-color: rgb(var(--ed-danger-rgb) / 0.3);
+}
+
+.ed-toast[data-kind='info'] {
+  border-color: rgb(var(--ed-border-rgb) / 0.18);
+}
+
+.ed-toast__msg {
+  line-height: 1.25;
+}

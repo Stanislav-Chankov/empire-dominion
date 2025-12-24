@@ -1,0 +1,39 @@
+/* HUD theme primitives powered by ThemeModule CSS variables (`--ed-*`). */
+
+.ed-hud-action-btn {
+  all: unset;
+  cursor: pointer;
+  user-select: none;
+
+  display: inline-grid;
+  place-items: center;
+
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: var(--ed-panel-border-width) solid rgb(var(--ed-accent-rgb) / 0.22);
+  background: rgb(var(--ed-bg-rgb) / 0.72);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+
+  font-family: var(--ed-font-ui);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--ed-text-rgb) / 0.9);
+}
+
+.ed-hud-action-btn:hover {
+  border-color: rgb(var(--ed-accent-rgb) / 0.32);
+  background: rgb(var(--ed-accent-rgb) / 0.07);
+}
+
+.ed-hud-action-btn:active {
+  transform: translateY(1px);
+}
+
+.ed-hud-action-btn:focus-visible {
+  outline: 2px solid rgb(var(--ed-accent-rgb) / 0.55);
+  outline-offset: 2px;
+}
+
+

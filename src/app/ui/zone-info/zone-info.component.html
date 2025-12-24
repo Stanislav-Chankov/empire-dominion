@@ -1,0 +1,91 @@
+<div class="overlay" role="dialog" aria-label="Zone info">
+  <div class="backdrop" (click)="close()"></div>
+
+  <div class="window" [style.backgroundImage]="'url(' + bannerUrl + ')'" (wheel)="$event.stopPropagation()">
+    <header class="window__header">
+      <div class="title">
+        <div class="title__top">{{ controlLabel }}</div>
+        <div class="title__bottom">{{ zone.zoneName }}</div>
+      </div>
+
+      <button class="close" type="button" (click)="close()" aria-label="Close">
+        ✕
+      </button>
+    </header>
+
+    <div class="content">
+      <section class="left">
+        <div class="card">
+          <div class="card__title">Zone</div>
+          <div class="kv">
+            <div class="kv__k">Biome</div>
+            <div class="kv__v">{{ zone.biomeName }}</div>
+          </div>
+          <div class="kv">
+            <div class="kv__k">Level Range</div>
+            <div class="kv__v">{{ zone.levelRange.min }}–{{ zone.levelRange.max }}</div>
+          </div>
+          <div class="kv">
+            <div class="kv__k">Tile</div>
+            <div class="kv__v">#{{ zone.tileId }} (q={{ zone.q }}, r={{ zone.r }})</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__title">Progress</div>
+          <div class="kv">
+            <div class="kv__k">Resources gathered</div>
+            <div class="kv__v">
+              <span class="bar" aria-label="Resources gathered">
+                <span class="bar__fill" [style.width.%]="zone.resourcesGatheredPercent"></span>
+              </span>
+              <span class="bar__text">{{ zone.resourcesGatheredPercent }}%</span>
+            </div>
+          </div>
+          <div class="kv">
+            <div class="kv__k">Quests</div>
+            <div class="kv__v">
+              {{ zone.questsCompleted }}/{{ zone.questsAvailable }} completed
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="right">
+        <div class="paper">
+          <div class="paper__title">Field Notes</div>
+          <div class="paper__body">
+            <div class="section">
+              <div class="section__title">Recommended professions</div>
+              <div class="chips">
+                @for (p of zone.recommendedProfessions; track $index) {
+                  <span class="chip">{{ p }}</span>
+                }
+              </div>
+            </div>
+
+            <div class="section">
+              <div class="section__title">Hazards</div>
+              <ul class="list">
+                @for (h of zone.hazards; track $index) {
+                  <li>{{ h }}</li>
+                }
+              </ul>
+            </div>
+
+            <div class="section">
+              <div class="section__title">Useful info</div>
+              <ul class="list">
+                @for (n of zone.notes; track $index) {
+                  <li>{{ n }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+

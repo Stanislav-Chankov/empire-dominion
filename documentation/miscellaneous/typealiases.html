@@ -1,0 +1,642 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-hexa documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">ng-hexa documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-typealiases">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Type aliases</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#Axial" title="scripts/generate-static-map.ts" ><b>Axial</b>&nbsp;&nbsp;&nbsp;(scripts/.../generate-static-map.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Cube" title="scripts/generate-static-map.ts" ><b>Cube</b>&nbsp;&nbsp;&nbsp;(scripts/.../generate-static-map.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EquippedItem" title="src/app/ui/hero-inventory/hero-inventory.models.ts" ><b>EquippedItem</b>&nbsp;&nbsp;&nbsp;(src/.../hero-inventory.models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#HeroDisplay" title="src/app/ui/hero-inventory/hero-inventory.component.ts" ><b>HeroDisplay</b>&nbsp;&nbsp;&nbsp;(src/.../hero-inventory.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#HeroEquipment" title="src/app/ui/hero-inventory/hero-inventory.models.ts" ><b>HeroEquipment</b>&nbsp;&nbsp;&nbsp;(src/.../hero-inventory.models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#HudAbility" title="src/app/ui/hud/hud.models.ts" ><b>HudAbility</b>&nbsp;&nbsp;&nbsp;(src/.../hud.models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#HudHero" title="src/app/ui/hud/hud.models.ts" ><b>HudHero</b>&nbsp;&nbsp;&nbsp;(src/.../hud.models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#HudHeroStats" title="src/app/ui/hud/hud.models.ts" ><b>HudHeroStats</b>&nbsp;&nbsp;&nbsp;(src/.../hud.models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#HudInventory" title="src/app/ui/hud/inventory/hud-inventory.component.ts" ><b>HudInventory</b>&nbsp;&nbsp;&nbsp;(src/.../hud-inventory.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#HudItem" title="src/app/ui/hud/hud.models.ts" ><b>HudItem</b>&nbsp;&nbsp;&nbsp;(src/.../hud.models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#HudState" title="src/app/ui/hud/hud.models.ts" ><b>HudState</b>&nbsp;&nbsp;&nbsp;(src/.../hud.models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StaticMap" title="src/app/three/scenes/hex-world-map.scene.ts" ><b>StaticMap</b>&nbsp;&nbsp;&nbsp;(src/.../hex-world-map.scene.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StaticMap" title="src/app/ui/hud/minimap/minimap.component.ts" ><b>StaticMap</b>&nbsp;&nbsp;&nbsp;(src/.../minimap.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StaticMapTile" title="scripts/generate-static-map.ts" ><b>StaticMapTile</b>&nbsp;&nbsp;&nbsp;(scripts/.../generate-static-map.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StaticMapTile" title="src/app/three/scenes/hex-world-map.scene.ts" ><b>StaticMapTile</b>&nbsp;&nbsp;&nbsp;(src/.../hex-world-map.scene.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StaticMapZone" title="scripts/generate-static-map.ts" ><b>StaticMapZone</b>&nbsp;&nbsp;&nbsp;(scripts/.../generate-static-map.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ThreeContext" title="src/app/three/core/three-scene-controller.ts" ><b>ThreeContext</b>&nbsp;&nbsp;&nbsp;(src/.../three-scene-controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ThreeEngineOptions" title="src/app/three/core/three-engine.ts" ><b>ThreeEngineOptions</b>&nbsp;&nbsp;&nbsp;(src/.../three-engine.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ThreeSize" title="src/app/three/core/three-scene-controller.ts" ><b>ThreeSize</b>&nbsp;&nbsp;&nbsp;(src/.../three-scene-controller.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UiState" title="src/app/state/ui.reducer.ts" ><b>UiState</b>&nbsp;&nbsp;&nbsp;(src/.../ui.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WowEquipmentSlot" title="src/app/ui/hero-inventory/hero-inventory.models.ts" ><b>WowEquipmentSlot</b>&nbsp;&nbsp;&nbsp;(src/.../hero-inventory.models.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>scripts/generate-static-map.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Axial"></a>
+                    <span class="name "><b>Axial</b><a href="#Axial"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Generates a static hex map JSON file for early prototyping.</p>
+<ul>
+<li>axial coords (q,r) within hex radius</li>
+<li>layered assignment: outer starter (<del>1/3), middle contested (</del>1/5), inner rare (rest)</li>
+<li>seedable randomization with adjacency-avoidance</li>
+</ul>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Cube"></a>
+                    <span class="name "><b>Cube</b><a href="#Cube"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StaticMapTile"></a>
+                    <span class="name "><b>StaticMapTile</b><a href="#StaticMapTile"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StaticMapZone"></a>
+                    <span class="name "><b>StaticMapZone</b><a href="#StaticMapZone"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/ui/hero-inventory/hero-inventory.models.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EquippedItem"></a>
+                    <span class="name "><b>EquippedItem</b><a href="#EquippedItem"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HeroEquipment"></a>
+                    <span class="name "><b>HeroEquipment</b><a href="#HeroEquipment"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>Partial&lt;Record&lt;WowEquipmentSlot, EquippedItem | null&gt;&gt;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WowEquipmentSlot"></a>
+                    <span class="name "><b>WowEquipmentSlot</b><a href="#WowEquipmentSlot"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;Head&quot; | &quot;Neck&quot; | &quot;Shoulder&quot; | &quot;Back&quot; | &quot;Chest&quot; | &quot;Shirt&quot; | &quot;Tabard&quot; | &quot;Wrist&quot; | &quot;Hands&quot; | &quot;Waist&quot; | &quot;Legs&quot; | &quot;Feet&quot; | &quot;Ring1&quot; | &quot;Ring2&quot; | &quot;Trinket1&quot; | &quot;Trinket2&quot; | &quot;MainHand&quot; | &quot;OffHand&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/ui/hero-inventory/hero-inventory.component.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HeroDisplay"></a>
+                    <span class="name "><b>HeroDisplay</b><a href="#HeroDisplay"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/ui/hud/hud.models.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HudAbility"></a>
+                    <span class="name "><b>HudAbility</b><a href="#HudAbility"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HudHero"></a>
+                    <span class="name "><b>HudHero</b><a href="#HudHero"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HudHeroStats"></a>
+                    <span class="name "><b>HudHeroStats</b><a href="#HudHeroStats"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HudItem"></a>
+                    <span class="name "><b>HudItem</b><a href="#HudItem"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HudState"></a>
+                    <span class="name "><b>HudState</b><a href="#HudState"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/ui/hud/inventory/hud-inventory.component.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HudInventory"></a>
+                    <span class="name "><b>HudInventory</b><a href="#HudInventory"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/three/scenes/hex-world-map.scene.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StaticMap"></a>
+                    <span class="name "><b>StaticMap</b><a href="#StaticMap"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StaticMapTile"></a>
+                    <span class="name "><b>StaticMapTile</b><a href="#StaticMapTile"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/ui/hud/minimap/minimap.component.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StaticMap"></a>
+                    <span class="name "><b>StaticMap</b><a href="#StaticMap"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/three/core/three-scene-controller.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ThreeContext"></a>
+                    <span class="name "><b>ThreeContext</b><a href="#ThreeContext"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ThreeSize"></a>
+                    <span class="name "><b>ThreeSize</b><a href="#ThreeSize"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/three/core/three-engine.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ThreeEngineOptions"></a>
+                    <span class="name "><b>ThreeEngineOptions</b><a href="#ThreeEngineOptions"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/state/ui.reducer.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UiState"></a>
+                    <span class="name "><b>UiState</b><a href="#UiState"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-typealiases';
+            var COMPODOC_CURRENT_PAGE_URL = 'typealiases.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

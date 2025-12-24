@@ -1,0 +1,137 @@
+<div
+  class="overlay"
+  role="dialog"
+  aria-label="Quest log"
+  (pointerdown)="$event.stopPropagation()"
+  (click)="$event.stopPropagation()"
+  (wheel)="$event.stopPropagation()"
+>
+  <div class="backdrop" (pointerdown)="$event.stopPropagation()" (click)="$event.stopPropagation(); close()"></div>
+
+  <div
+    class="window"
+    (pointerdown)="$event.stopPropagation()"
+    (click)="$event.stopPropagation()"
+    (wheel)="$event.stopPropagation()"
+  >
+    <header class="window__header">
+      <div class="title">
+        <div class="title__top">Quest Log</div>
+        <div class="title__bottom">{{ heroName }}</div>
+      </div>
+
+      <button class="close" type="button" (click)="close()" aria-label="Close">
+        ✕
+      </button>
+    </header>
+
+    <div class="content">
+      <app-log-list label="Quests" [count]="visibleQuests.length" ariaLabel="Quest list">
+        <input
+          logTop
+          class="log__search"
+          type="text"
+          placeholder="Search"
+          aria-label="Search quests"
+          [value]="query"
+          (input)="setQuery($any($event.target).value)"
+        />
+
+        @for (q of visibleQuests; track q.id) {
+          <button
+            class="entry"
+            type="button"
+            role="listitem"
+            [class.entry--active]="q.id === selectedQuest?.id"
+            (click)="selectQuest(q.id)"
+          >
+            <div class="entry__row">
+              <div class="entry__title" [title]="q.title">{{ q.title }}</div>
+              <div class="entry__level">{{ q.level }}</div>
+            </div>
+            <div class="entry__meta">
+              <span class="entry__zone">{{ q.zone }}</span>
+              @if (q.isTracked) {
+                <span class="entry__tag">Tracked</span>
+              }
+            </div>
+          </button>
+        }
+
+        @if (!visibleQuests.length) {
+          <div class="log__empty" aria-label="No matching quests">No matches.</div>
+        }
+      </app-log-list>
+
+      <section class="details" aria-label="Quest details">
+        <div class="paper">
+          @if (selectedQuest; as q) {
+            <header class="paper__header">
+              <div class="paper__title">{{ q.title }}</div>
+              <div class="paper__sub">
+                <span class="paper__level">Level {{ q.level }}</span>
+                <span class="paper__dot">•</span>
+                <span class="paper__zone">{{ q.zone }}</span>
+              </div>
+            </header>
+
+            <div class="paper__body">
+              <div class="paper__desc">{{ q.description }}</div>
+
+              <div class="paper__text">
+                @for (line of q.text.split('\n'); track $index) {
+                  @if (line.trim().length) {
+                    <p>{{ line }}</p>
+                  } @else {
+                    <div class="paper__spacer"></div>
+                  }
+                }
+              </div>
+
+              <div class="section">
+                <div class="section__title">Objectives</div>
+                <div class="objectives">
+                  @for (o of q.objectives; track $index) {
+                    @let done = o.done || (!!o.required && (o.current ?? 0) >= o.required);
+                    <div class="objective" [class.objective--done]="done">
+                      <span class="objective__bullet" aria-hidden="true"></span>
+                      <div class="objective__text">
+                        <span>{{ o.text }}</span>
+                        @if (o.required) {
+                          <span class="objective__progress">({{ o.current ?? 0 }}/{{ o.required }})</span>
+                        }
+                      </div>
+                    </div>
+                  }
+                </div>
+              </div>
+
+              @if (q.rewards?.length) {
+                <div class="section">
+                  <div class="section__title">Rewards</div>
+                  <div class="rewards">
+                    @for (r of q.rewards!; track $index) {
+                      <div class="reward">
+                        <div class="reward__icon" aria-hidden="true"></div>
+                        <div class="reward__text">
+                          <span class="reward__name">{{ r.name }}</span>
+                          @if (r.quantity) {
+                            <span class="reward__qty">×{{ r.quantity }}</span>
+                          }
+                        </div>
+                      </div>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+          } @else {
+            <div class="paper__empty">No quests.</div>
+          }
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,26 @@
+<div class="abilities__row">
+  @for (a of abilities; track a.id) {
+    <button class="ability" type="button" [attr.aria-label]="a.name">
+      <div class="ability__icon"></div>
+      <div class="ability__meta">
+        <div class="ability__name" [title]="a.name">{{ a.name }}</div>
+        <div class="ability__sub">
+          @if (a.isPassive) {
+            <span class="pill">PASSIVE</span>
+          } @else {
+            <span class="pill">{{ a.manaCost }} MP</span>
+            <span class="pill">{{ a.cooldownSeconds }}s</span>
+          }
+        </div>
+      </div>
+      @if (!a.isPassive && a.cooldownRemainingSeconds > 0) {
+        <div class="ability__cd">
+          <div class="ability__cdShade"></div>
+          <div class="ability__cdText">{{ a.cooldownRemainingSeconds }}s</div>
+        </div>
+      }
+    </button>
+  }
+</div>
+
+

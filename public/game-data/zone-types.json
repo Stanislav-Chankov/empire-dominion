@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "zoneTypes": [
+    {
+      "typeId": 1,
+      "id": "heartland_plains",
+      "name": "Heartland Plains",
+      "description": "Starter-friendly farmlands and gentle hills. Reliable staples and safe routes; faction control is common and conflict is about logistics rather than rarity.",
+      "richIn": ["grain", "clay", "timber"],
+      "supports": ["farming", "cooking", "lumbering"],
+      "notes": "High baseline economy; low access to high-tier ore and magic reagents."
+    },
+    {
+      "typeId": 2,
+      "id": "ancient_forest",
+      "name": "Ancient Forest",
+      "description": "Dense woodland with rare flora and resinous trees. Great for woods, hides, and alchemical reagents; limited stone and ore veins.",
+      "richIn": ["hardwood", "resin_oil", "herbs_common", "light_hide"],
+      "supports": ["lumbering", "herbalism", "skinning", "leatherworking"],
+      "notes": "Balanced value through mixed trade goods rather than raw metal."
+    },
+    {
+      "typeId": 3,
+      "id": "highland_mountains",
+      "name": "Highland Mountains",
+      "description": "Rocky passes and mining settlements. High ore and stone output with gem pockets; food and water are scarce so supply lines matter.",
+      "richIn": ["iron_ore", "stone", "raw_gems"],
+      "supports": ["mining", "blacksmithing", "armorsmithing", "engineering"],
+      "notes": "Economic value is metal-heavy; vulnerable to food/water disruption."
+    },
+    {
+      "typeId": 4,
+      "id": "crystal_caves",
+      "name": "Crystal Caves",
+      "description": "Subterranean rifts infused with arcane energy. Produces enchanting reagents and mana crystals; contested because it upgrades everything.",
+      "richIn": ["mana_crystals", "arcane_dust", "runestones"],
+      "supports": ["enchanting", "alchemy", "mining"],
+      "notes": "Low staple output; high premium reagents offset scarcity."
+    },
+    {
+      "typeId": 5,
+      "id": "swamp_mire",
+      "name": "Swamp Mire",
+      "description": "Wetlands full of rare herbs, peat, and murky waterways. Strong for alchemy and cooking inputs; movement is slower and visibility is poor.",
+      "richIn": ["herbs_rare", "peat", "fresh_water"],
+      "supports": ["herbalism", "alchemy", "cooking"],
+      "notes": "Value comes from reagents; avoid relying on metal production here."
+    },
+    {
+      "typeId": 6,
+      "id": "riverlands",
+      "name": "Riverlands",
+      "description": "Fertile deltas and river trade routes. Excellent water access and mixed staple production; good for early trade and worker camp networks.",
+      "richIn": ["fresh_water", "fish", "flax", "grain"],
+      "supports": ["fishing", "farming", "tailoring", "cooking"],
+      "notes": "Balanced zone with steady income; few premium minerals."
+    },
+    {
+      "typeId": 7,
+      "id": "desert_badlands",
+      "name": "Desert Badlands",
+      "description": "Arid dunes and rugged badlands. Salt and chemical reagents are abundant; water scarcity creates natural conflict and caravan gameplay.",
+      "richIn": ["salt", "sulfur", "heavy_hide"],
+      "supports": ["alchemy", "engineering", "skinning", "leatherworking"],
+      "notes": "High value via scarcity-trade goods; low wood and water."
+    },
+    {
+      "typeId": 8,
+      "id": "tundra_frostwild",
+      "name": "Tundra Frostwild",
+      "description": "Frozen plains with hardy beasts and mineral seams. Strong hides and pristine water; staple crops are limited so supply must be planned.",
+      "richIn": ["heavy_hide", "spring_water", "iron_ore"],
+      "supports": ["skinning", "mining", "cooking"],
+      "notes": "Value is split between defense materials and industry inputs."
+    },
+    {
+      "typeId": 9,
+      "id": "volcanic_wastes",
+      "name": "Volcanic Wastes",
+      "description": "Ash fields and lava flows. Provides obsidian, high-grade ore, and volatile reagents used for endgame crafting and engineering.",
+      "richIn": ["obsidian", "mithril_ore", "sulfur", "primal_essence"],
+      "supports": ["mining", "blacksmithing", "engineering", "enchanting"],
+      "notes": "Premium output compensates for near-zero food/water."
+    },
+    {
+      "typeId": 10,
+      "id": "coastal_isles",
+      "name": "Coastal Isles",
+      "description": "Island chains with fisheries, salt flats, and trade ports. Great for fish, salt, and specialty fibers; limited heavy stone production.",
+      "richIn": ["fish", "salt", "silkweed"],
+      "supports": ["fishing", "cooking", "tailoring"],
+      "notes": "Trade-focused zone; ideal for feeding armies and funding upgrades."
+    }
+  ]
+}
+
+

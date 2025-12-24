@@ -1,0 +1,39 @@
+<div class="bottombar">
+  <!-- Minimap -->
+  <section class="panel minimap" aria-label="Minimap">
+    <div class="panel__title">MAP</div>
+    <div class="minimap__viewport">
+      @if (mapScene) {
+        <app-minimap [scene]="mapScene" />
+      } @else {
+        <div class="minimap__grid"></div>
+      }
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="panel hero" aria-label="Hero panel">
+    <div class="panel__title">HERO</div>
+    <app-hud-hero-avatar [hero]="state.hero" />
+  </section>
+
+  <!-- Abilities -->
+  <section class="panel abilities" aria-label="Abilities">
+    <div class="panel__title">ABILITIES</div>
+    <app-hud-abilities [abilities]="state.abilities" />
+  </section>
+
+  <!-- Inventory -->
+  <section class="panel inventory" aria-label="Inventory">
+    <div class="panel__title">INVENTORY</div>
+    <app-hud-inventory [gold]="state.gold" [inventory]="state.inventory" />
+  </section>
+</div>
+
+<div class="cornerActions" aria-label="HUD quick actions">
+  <button class="cornerActions__btn ed-hud-action-btn" type="button" (click)="toggleQuestLog()">
+    Quests
+  </button>
+</div>
+
+

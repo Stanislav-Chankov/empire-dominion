@@ -1,0 +1,70 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (GitHub Pages base path)
+        run: |
+          npm run build:pages -- \
+            --base-href "/${{ github.event.repository.name }}/" \
+            --deploy-url "/${{ github.event.repository.name }}/"
+
+      - name: Resolve dist directory
+        id: dist
+        shell: bash
+        run: |
+          set -euo pipefail
+          DIST_DIR="$(dirname "$(find dist -type f -name index.html | head -n 1)")"
+          echo "dist_dir=$DIST_DIR" >> "$GITHUB_OUTPUT"
+
+      - name: SPA fallback (404.html) + disable Jekyll
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp "${{ steps.dist.outputs.dist_dir }}/index.html" "${{ steps.dist.outputs.dist_dir }}/404.html"
+          touch "${{ steps.dist.outputs.dist_dir }}/.nojekyll"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.dist.outputs.dist_dir }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+

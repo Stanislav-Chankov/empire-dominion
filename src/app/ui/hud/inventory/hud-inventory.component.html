@@ -1,0 +1,28 @@
+<div class="inventory__meta" aria-label="Gold">
+  <span class="inventory__goldLabel">Gold</span>
+  <span class="inventory__goldValue">{{ gold }}</span>
+  <button class="inventory__toggle ed-hud-action-btn" type="button" (click)="toggleHeroInventory()">
+    Inventory
+  </button>
+</div>
+
+<!-- <div class="inventory__sections">
+  <div class="invBlock">
+    <div class="invBlock__title">MAIN</div>
+    <div class="slots">
+      @for (it of inventory.main; track $index) {
+        <div class="slot" [class.slot--empty]="!it" [attr.aria-label]="it?.name ?? 'Empty slot'">
+          @if (it) {
+            <div class="slot__icon"></div>
+            <div class="slot__name" [title]="it.name">{{ it.name }}</div>
+            @if (it.charges) {
+              <div class="slot__badge">{{ it.charges }}</div>
+            }
+          }
+        </div>
+      }
+    </div>
+  </div>
+</div> -->
+
+

@@ -1,0 +1,134 @@
+@let open = (open$ | async) ?? false;
+
+<div class="dock" aria-label="Empire panel toggle">
+  <button class="dock__btn ed-hud-action-btn" type="button" (click)="toggle()" [attr.aria-expanded]="open">
+    Empire
+  </button>
+</div>
+
+<aside
+  class="panel"
+  [class.panel--open]="open"
+  role="complementary"
+  aria-label="Empire"
+  (pointerdown)="$event.stopPropagation()"
+  (click)="$event.stopPropagation()"
+  (wheel)="$event.stopPropagation()"
+>
+  <header class="panel__header">
+    <div class="title">
+      <div class="title__top">Empire</div>
+      <div class="title__bottom">{{ empire.name }}</div>
+    </div>
+
+    <button class="close" type="button" (click)="close()" aria-label="Close">
+      ✕
+    </button>
+  </header>
+
+  <nav class="tabs" aria-label="Empire categories">
+    <button class="tab" type="button" [class.tab--active]="tab === 'troops'" (click)="setTab('troops')">
+      Troops
+    </button>
+    <button class="tab" type="button" [class.tab--active]="tab === 'workers'" (click)="setTab('workers')">
+      Workers
+    </button>
+    <button class="tab" type="button" [class.tab--active]="tab === 'resources'" (click)="setTab('resources')">
+      Resources
+    </button>
+  </nav>
+
+  <div class="panel__body">
+    @if (tab === 'troops') {
+      <app-log-list label="Troops" [count]="empire.troops.length">
+        <div logTop class="chips" aria-label="Troops summary">
+          <span class="chip chip--idle">Idle {{ idleCount(empire.troops) }}</span>
+          <span class="chip chip--busy">Occupied {{ occupiedCount(empire.troops) }}</span>
+        </div>
+
+        @for (t of empire.troops; track t.id) {
+          <button class="entry" type="button" role="listitem" [class.entry--active]="!!t.assignment">
+            <div class="entry__row">
+              <div class="entry__title" [title]="t.name">{{ t.name }}</div>
+              <div class="entry__level">Lv {{ t.level }}</div>
+            </div>
+            <div class="entry__meta">
+              <span class="entry__zone">{{ t.role }}</span>
+              @if (t.assignment) {
+                <span class="entry__tag" [title]="t.assignment">Occupied</span>
+              } @else {
+                <span class="entry__tag">Idle</span>
+              }
+            </div>
+          </button>
+        }
+      </app-log-list>
+    }
+
+    @if (tab === 'workers') {
+      <app-log-list label="Workers" [count]="empire.workers.length">
+        <div logTop class="chips" aria-label="Workers summary">
+          <span class="chip chip--idle">Idle {{ idleCount(empire.workers) }}</span>
+          <span class="chip chip--busy">Occupied {{ occupiedCount(empire.workers) }}</span>
+        </div>
+
+        <div logTop class="subsection">
+          <div class="subsection__title">Available professions</div>
+          <div class="chips">
+            @for (p of availableWorkerTypes.gatherers; track p) {
+              <span class="chip chip--idle">{{ p }}</span>
+            }
+            @for (p of availableWorkerTypes.crafters; track p) {
+              <span class="chip chip--busy">{{ p }}</span>
+            }
+          </div>
+        </div>
+
+        @for (w of empire.workers; track w.id) {
+          <button class="entry" type="button" role="listitem" [class.entry--active]="!!w.assignment">
+            <div class="entry__row">
+              <div class="entry__title" [title]="w.name">{{ w.name }}</div>
+              <div class="entry__level">Lv {{ w.level }}</div>
+            </div>
+            <div class="entry__meta">
+              <span class="entry__zone">{{ w.role }}</span>
+              @if (w.assignment) {
+                <span class="entry__tag" [title]="w.assignment">Occupied</span>
+              } @else {
+                <span class="entry__tag">Idle</span>
+              }
+            </div>
+          </button>
+        }
+      </app-log-list>
+    }
+
+    @if (tab === 'resources') {
+      <app-log-list label="Resources" [count]="availableResources.length">
+        <div logTop class="chips" aria-label="Known biomes">
+          @for (zt of empire.zoneTypeIds; track zt) {
+            <span class="chip">{{ zoneTypeLabel(zt) }}</span>
+          }
+        </div>
+
+        @for (r of availableResources; track r.id) {
+          <button class="entry" type="button" role="listitem">
+            <div class="entry__row">
+              <div class="entry__title" [title]="r.name">{{ r.name }}</div>
+              <div class="entry__level">{{ r.category }}</div>
+            </div>
+            <div class="entry__meta">
+              <span class="entry__zone">
+                @for (zt of r.fromZoneTypeIds; track zt) {
+                  <span class="entry__tag">{{ zoneTypeLabel(zt) }}</span>
+                }
+              </span>
+            </div>
+          </button>
+        }
+      </app-log-list>
+    }
+  </div>
+</aside>
+
+

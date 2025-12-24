@@ -1,0 +1,27 @@
+<div class="page">
+  <header class="header">
+    <div class="title">Map</div>
+    <div class="subtitle">Drag with mouse to pan (prototype)</div>
+  </header>
+
+  <section class="panel">
+    <div class="viewport">
+      <app-three-viewport [controller]="scene" />
+      <app-hud [state]="hud" [mapScene]="scene" />
+      <app-empire-panel [empire]="hud.empire" />
+      @if (heroInventoryOpen$ | async) {
+        <app-hero-inventory [hero]="hud.hero" [equipment]="equipment" />
+      }
+      @if (questLogOpen$ | async) {
+        <app-quest-log [heroName]="hud.hero.HeroName" [quests]="hud.quests" />
+      }
+      @if (zoneInfoOpen$ | async) {
+        @if (zoneInfoTile$ | async; as tile) {
+          <app-zone-info [zone]="zoneInfoFromTile(tile)" />
+        }
+      }
+    </div>
+  </section>
+</div>
+
+

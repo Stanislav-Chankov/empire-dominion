@@ -1,0 +1,98 @@
+.hero__content {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+.hero__portrait {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(0, 255, 0, 0.12), transparent 55%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  height: 84px;
+  position: relative;
+}
+
+.hero__level {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 6px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero__name {
+  margin-bottom: 6px;
+}
+
+.hero__nameTitle {
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.hero__nameSub {
+  margin-top: 2px;
+  font-size: 12px;
+  color: rgba(231, 236, 255, 0.65);
+}
+
+.bar {
+  position: relative;
+  border-radius: 10px;
+  height: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.bar + .bar {
+  margin-top: 6px;
+}
+
+.bar__fill {
+  position: absolute;
+  inset: 0;
+  width: 40%;
+}
+
+.bar__text {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  line-height: 18px;
+  padding: 0 8px;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.bar__regen {
+  color: rgba(231, 236, 255, 0.7);
+}
+
+.hp .bar__fill {
+  background: linear-gradient(90deg, #1fd35e, #0b8b39);
+}
+
+.mana .bar__fill {
+  background: linear-gradient(90deg, #3aa3ff, #2463ff);
+}
+
+.xp .bar__fill {
+  background: linear-gradient(90deg, #b07cff, #7c3aed);
+}
+
+.bar__label {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: rgba(231, 236, 255, 0.85);
+}
+
+

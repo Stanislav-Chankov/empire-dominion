@@ -1,0 +1,25 @@
+<section class="log" role="group" [attr.aria-label]="ariaLabel ?? label">
+  <div class="log__top">
+    <div class="log__heading">
+      <div class="log__label">{{ label }}</div>
+      @if (count != null) {
+        <div class="log__count">{{ count }}</div>
+      }
+    </div>
+    <ng-content select="[logTop]"></ng-content>
+  </div>
+
+  <div
+    class="log__list"
+    [class.log__list--dragging]="dragging"
+    (pointerdown)="onScrollAreaPointerDown($event)"
+    (pointermove)="onScrollAreaPointerMove($event)"
+    (pointerup)="onScrollAreaPointerUp($event)"
+    (pointercancel)="onScrollAreaPointerUp($event)"
+    role="list"
+  >
+    <ng-content></ng-content>
+  </div>
+</section>
+
+

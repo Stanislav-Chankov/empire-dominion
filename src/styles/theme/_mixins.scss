@@ -1,0 +1,41 @@
+/* Optional SCSS helpers.
+   These are purely build-time conveniences; the actual theme values come from CSS variables. */
+
+@mixin ed-scrollbar(
+  $trackAlpha: 0.25,
+  $thumbAlpha: 0.35,
+  $thumbAlphaHover: 0.5
+) {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--ed-accent-rgb) / 0.38) rgb(var(--ed-bg-rgb) / $trackAlpha);
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgb(var(--ed-bg-rgb) / $trackAlpha);
+    border-left: var(--ed-panel-border-width) solid rgb(var(--ed-border-rgb) / 0.08);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--ed-accent-rgb) / $thumbAlpha),
+      rgb(var(--ed-bg-rgb) / 0.2)
+    );
+    border: var(--ed-panel-border-width) solid rgb(var(--ed-accent-rgb) / 0.22);
+    border-radius: 999px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      rgb(var(--ed-accent-rgb) / $thumbAlphaHover),
+      rgb(var(--ed-bg-rgb) / 0.22)
+    );
+    border-color: rgb(var(--ed-accent-rgb) / 0.34);
+  }
+}
+
+

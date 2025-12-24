@@ -1,0 +1,117 @@
+/* Quest-log style list container (extracted) */
+:host {
+  display: block;
+  min-height: 0;
+  height: 100%;
+}
+
+.log {
+  height: 100%;
+  border-radius: 14px;
+  border: var(--ed-panel-border-width) solid rgb(var(--ed-border-rgb) / 0.12);
+  background: rgb(var(--ed-border-rgb) / 0.03);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 0; // required for grid child scrolling
+}
+
+.log__top {
+  padding: 10px 10px 12px;
+  border-bottom: var(--ed-panel-border-width) solid rgb(var(--ed-border-rgb) / 0.1);
+  background: rgb(var(--ed-bg-rgb) / 0.2);
+}
+
+.log__heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.log__label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ed-text-muted);
+}
+
+.log__count {
+  font-size: 12px;
+  font-weight: 800;
+  color: rgb(var(--ed-text-rgb) / 0.8);
+}
+
+.log__list {
+  overflow: auto;
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+  min-height: 0;
+  overscroll-behavior: contain;
+  align-content: start;
+  grid-auto-rows: 54px; // fixed-height rows like WoW
+  scrollbar-gutter: stable;
+  cursor: grab;
+  touch-action: pan-y;
+
+  /* Custom scrollbar (same as quest log) */
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--ed-accent-rgb) / 0.38) rgb(var(--ed-bg-rgb) / 0.25);
+}
+
+.log__list--dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.log__list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.log__list::-webkit-scrollbar-track {
+  background: rgb(var(--ed-bg-rgb) / 0.25);
+  border-left: var(--ed-panel-border-width) solid rgb(var(--ed-border-rgb) / 0.08);
+}
+
+.log__list::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgb(var(--ed-accent-rgb) / 0.35), rgb(var(--ed-bg-rgb) / 0.2));
+  border: var(--ed-panel-border-width) solid rgb(var(--ed-accent-rgb) / 0.22);
+  border-radius: 999px;
+}
+
+.log__list::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgb(var(--ed-accent-rgb) / 0.5), rgb(var(--ed-bg-rgb) / 0.22));
+  border-color: rgb(var(--ed-accent-rgb) / 0.34);
+}
+
+/*
+  Base entry/button styling extracted.
+  Consumers keep their inner layout (e.g. entry__row/title/meta) in their own component.
+*/
+:host ::ng-deep .log__list .entry {
+  all: unset;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: var(--ed-panel-border-width) solid rgb(var(--ed-border-rgb) / 0.12);
+  background: rgb(var(--ed-bg-rgb) / 0.22);
+  height: 54px; // fixed row height (matches grid-auto-rows)
+  padding: 6px 8px;
+  display: grid;
+  align-content: center;
+}
+
+:host ::ng-deep .log__list .entry:hover {
+  border-color: rgb(var(--ed-accent-rgb) / 0.25);
+  background: rgb(var(--ed-accent-rgb) / 0.06);
+}
+
+:host ::ng-deep .log__list .entry--active {
+  border-color: rgb(var(--ed-accent-rgb) / 0.32);
+  background: linear-gradient(180deg, rgb(var(--ed-accent-rgb) / 0.14), rgb(var(--ed-bg-rgb) / 0.2));
+  box-shadow: 0 0 0 1px rgb(var(--ed-accent-rgb) / 0.1) inset;
+}
+
+
