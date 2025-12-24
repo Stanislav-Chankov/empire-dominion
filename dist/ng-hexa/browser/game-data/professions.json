@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "professions": [
+    {
+      "id": "mining",
+      "name": "Mining",
+      "description": "Extracts ore, stone, and rare minerals from veins across the world. Mining is the backbone of weapon/armor forging and engineering, and drives faction logistics.",
+      "focus": ["ores", "stone", "gems", "sulfur"],
+      "produces": ["ore", "stone", "gems"],
+      "enables": ["blacksmithing", "armorsmithing", "jewelcrafting", "engineering"]
+    },
+    {
+      "id": "herbalism",
+      "name": "Herbalism",
+      "description": "Harvests herbs, fungi, and exotic plants used for potions, elixirs, poisons, inks, and enchantment reagents. Herb routes and node knowledge are a key advantage.",
+      "focus": ["herbs", "fungi", "resins"],
+      "produces": ["herbs", "reagents"],
+      "enables": ["alchemy", "cooking", "enchanting"]
+    },
+    {
+      "id": "skinning",
+      "name": "Skinning",
+      "description": "Collects hides, furs, sinew, and scales from beasts and monsters. Provides the raw materials needed for leather armor, straps, kits, and certain crafting utilities.",
+      "focus": ["hides", "furs", "scales"],
+      "produces": ["hides", "reagents"],
+      "enables": ["leatherworking", "armorsmithing"]
+    },
+    {
+      "id": "lumbering",
+      "name": "Lumbering",
+      "description": "Gathers timber and specialty woods from forests and groves. Wood is essential for camps, tools, bows, staves, wagons, and many military logistics upgrades.",
+      "focus": ["wood", "resin_oil"],
+      "produces": ["wood"],
+      "enables": ["engineering", "cooking"]
+    },
+    {
+      "id": "farming",
+      "name": "Farming",
+      "description": "Produces staple foods and livestock products. Farming supports troop upkeep, worker wages, cooking, and stable local economies. Includes animal husbandry (raising animals for meat, hides, and trade).",
+      "focus": ["grain", "fruit", "livestock", "poultry"],
+      "produces": ["food"],
+      "enables": ["cooking"]
+    },
+    {
+      "id": "fishing",
+      "name": "Fishing",
+      "description": "Harvests fish and coastal resources used in cooking and trade. Fish-heavy diets can provide strong buffs and are often tied to contested water routes.",
+      "focus": ["fish", "salt"],
+      "produces": ["food"],
+      "enables": ["cooking"]
+    },
+    {
+      "id": "blacksmithing",
+      "name": "Blacksmithing",
+      "description": "Smelts ores into ingots and forges weapons, tools, and metal components. Blacksmiths are critical for arming troops and maintaining battlefield readiness.",
+      "focus": ["weapons", "tools", "metal_components"],
+      "inputs": ["ores", "stone", "fuel_reagents"],
+      "outputs": ["weapons", "tools", "ingots"]
+    },
+    {
+      "id": "armorsmithing",
+      "name": "Armorsmithing",
+      "description": "Crafts durable armor and defensive equipment using metals, leather straps, and reinforcing textiles. Balances protection, mobility, and repair efficiency.",
+      "focus": ["armor", "shields", "reinforcements"],
+      "inputs": ["ores", "hides", "cloth"],
+      "outputs": ["armor", "shields"]
+    },
+    {
+      "id": "tailoring",
+      "name": "Tailoring",
+      "description": "Weaves fibers into cloth and crafts garments, bags, and magical fabrics. Tailors often supply the economy with storage items and caster gear.",
+      "focus": ["cloth_gear", "bags", "wraps"],
+      "inputs": ["fibers", "dyes"],
+      "outputs": ["cloth", "bags", "cloth_armor"]
+    },
+    {
+      "id": "leatherworking",
+      "name": "Leatherworking",
+      "description": "Turns hides into leather armor, kits, straps, and utility items. Leatherworking bridges hunting economies with troop protection and repair systems.",
+      "focus": ["leather_gear", "armor_kits", "straps"],
+      "inputs": ["hides", "reagents"],
+      "outputs": ["leather", "leather_armor", "kits"]
+    },
+    {
+      "id": "alchemy",
+      "name": "Alchemy",
+      "description": "Combines herbs, water, salts, and essences into potions, elixirs, poisons, and flasks. Alchemy powers combat buffs and strategic logistics (healing, speed, stealth).",
+      "focus": ["potions", "elixirs", "poisons"],
+      "inputs": ["herbs", "water", "salts"],
+      "outputs": ["consumables", "reagents"]
+    },
+    {
+      "id": "enchanting",
+      "name": "Enchanting",
+      "description": "Uses dust, essences, crystals, and runestones to enhance gear and create glyph-like utilities. Enchanting is the premium endgame economy due to constant demand.",
+      "focus": ["gear_enchants", "glyphs", "runes"],
+      "inputs": ["dust", "essences", "crystals", "runestones"],
+      "outputs": ["enchants", "runes"]
+    },
+    {
+      "id": "jewelcrafting",
+      "name": "Jewelcrafting",
+      "description": "Cuts gems and crafts jewelry, sockets, and high-value trade goods. Jewelcrafting ties together mining, enchanting, and elite equipment progression.",
+      "focus": ["rings", "amulets", "sockets"],
+      "inputs": ["gems", "metals"],
+      "outputs": ["jewelry", "socket_items"]
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "description": "Builds gadgets, traps, turrets, and logistical tools (carts, deployables). Engineering scales the world-economy loop by improving worker safety and travel efficiency.",
+      "focus": ["gadgets", "traps", "deployables"],
+      "inputs": ["metals", "stone", "oils", "sulfur"],
+      "outputs": ["gadgets", "structures", "utilities"]
+    },
+    {
+      "id": "cooking",
+      "name": "Cooking",
+      "description": "Turns raw food into buff meals and rations. Cooking is always relevant because it supports hero activity, worker efficiency, and troop sustain.",
+      "focus": ["meals", "rations", "buff_food"],
+      "inputs": ["food", "water", "spices"],
+      "outputs": ["consumables"]
+    }
+  ]
+}
+
+

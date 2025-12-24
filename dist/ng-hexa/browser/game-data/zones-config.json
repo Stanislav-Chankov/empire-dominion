@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "designNotes": {
+    "goal": "Each zone instance has its own level range and a balanced resource distribution. Zones can be rich in specific resources, but overall gathering value is balanced across zones.",
+    "howToUse": "When generating a zone instance, read its resourceWeightsPercent and spawn resource nodes by percent weights. Percentages sum to 100 per zone instance.",
+    "balancingRule": "All zones use the same total node density (100). Premium resources compensate for scarcity in staples. Livestock and wildlife are included as gatherable resource types."
+  },
+  "zones": [
+    {
+      "id": "zone_heartland_01",
+      "name": "Golden Heartlands",
+      "zoneType": "heartland_plains",
+      "levelRange": { "min": 1, "max": 12 },
+      "resourceWeightsPercent": {
+        "grain": 20,
+        "timber": 16,
+        "clay": 14,
+        "fresh_water": 10,
+        "stone": 8,
+        "cattle": 8,
+        "sheep": 6,
+        "poultry": 4,
+        "copper_ore": 6,
+        "herbs_common": 6,
+        "flax": 2
+      }
+    },
+    {
+      "id": "zone_forest_01",
+      "name": "Elderwood",
+      "zoneType": "ancient_forest",
+      "levelRange": { "min": 8, "max": 22 },
+      "resourceWeightsPercent": {
+        "hardwood": 18,
+        "timber": 12,
+        "resin_oil": 12,
+        "herbs_common": 12,
+        "light_hide": 10,
+        "fresh_water": 10,
+        "fruit": 8,
+        "deer_game": 8,
+        "boar_game": 5,
+        "arcane_dust": 5
+      }
+    },
+    {
+      "id": "zone_mountains_01",
+      "name": "Stonecrown Highlands",
+      "zoneType": "highland_mountains",
+      "levelRange": { "min": 14, "max": 30 },
+      "resourceWeightsPercent": {
+        "iron_ore": 20,
+        "stone": 18,
+        "raw_gems": 12,
+        "limestone": 10,
+        "copper_ore": 8,
+        "tin_ore": 8,
+        "fresh_water": 8,
+        "goat_livestock": 6,
+        "herbs_common": 5,
+        "hardwood": 5
+      }
+    },
+    {
+      "id": "zone_caves_01",
+      "name": "Riftcrystal Depths",
+      "zoneType": "crystal_caves",
+      "levelRange": { "min": 22, "max": 40 },
+      "resourceWeightsPercent": {
+        "mana_crystals": 18,
+        "arcane_dust": 16,
+        "runestones": 14,
+        "raw_gems": 10,
+        "iron_ore": 10,
+        "stone": 10,
+        "spring_water": 8,
+        "herbs_rare": 6,
+        "resin_oil": 4,
+        "salt": 4
+      }
+    },
+    {
+      "id": "zone_swamp_01",
+      "name": "Blackmire",
+      "zoneType": "swamp_mire",
+      "levelRange": { "min": 10, "max": 26 },
+      "resourceWeightsPercent": {
+        "herbs_rare": 18,
+        "peat": 14,
+        "fresh_water": 14,
+        "fish": 10,
+        "resin_oil": 10,
+        "clay": 8,
+        "herbs_common": 8,
+        "fruit": 6,
+        "light_hide": 4,
+        "arcane_dust": 4,
+        "boar_game": 4
+      }
+    },
+    {
+      "id": "zone_riverlands_01",
+      "name": "Silver Delta",
+      "zoneType": "riverlands",
+      "levelRange": { "min": 6, "max": 18 },
+      "resourceWeightsPercent": {
+        "fresh_water": 18,
+        "fish": 14,
+        "grain": 12,
+        "flax": 12,
+        "fruit": 10,
+        "clay": 10,
+        "timber": 8,
+        "poultry": 6,
+        "cattle": 4,
+        "herbs_common": 4,
+        "salt": 2
+      }
+    },
+    {
+      "id": "zone_desert_01",
+      "name": "Saltwind Badlands",
+      "zoneType": "desert_badlands",
+      "levelRange": { "min": 18, "max": 34 },
+      "resourceWeightsPercent": {
+        "salt": 18,
+        "sulfur": 14,
+        "heavy_hide": 12,
+        "iron_ore": 12,
+        "stone": 10,
+        "resin_oil": 8,
+        "herbs_rare": 8,
+        "clay": 6,
+        "spring_water": 6,
+        "raw_gems": 4,
+        "goat_livestock": 2
+      }
+    },
+    {
+      "id": "zone_tundra_01",
+      "name": "Frostwild Expanse",
+      "zoneType": "tundra_frostwild",
+      "levelRange": { "min": 24, "max": 42 },
+      "resourceWeightsPercent": {
+        "heavy_hide": 18,
+        "spring_water": 14,
+        "iron_ore": 14,
+        "stone": 12,
+        "meat": 8,
+        "deer_game": 8,
+        "herbs_rare": 8,
+        "raw_gems": 6,
+        "salt": 4,
+        "hardwood": 4,
+        "primal_essence": 4
+      }
+    },
+    {
+      "id": "zone_volcanic_01",
+      "name": "Ashforge Wastes",
+      "zoneType": "volcanic_wastes",
+      "levelRange": { "min": 32, "max": 50 },
+      "resourceWeightsPercent": {
+        "obsidian": 16,
+        "mithril_ore": 14,
+        "sulfur": 14,
+        "primal_essence": 12,
+        "iron_ore": 10,
+        "runestones": 8,
+        "raw_gems": 8,
+        "stone": 8,
+        "arcane_dust": 6,
+        "spring_water": 4
+      }
+    },
+    {
+      "id": "zone_coast_01",
+      "name": "Pearlcoast Isles",
+      "zoneType": "coastal_isles",
+      "levelRange": { "min": 12, "max": 28 },
+      "resourceWeightsPercent": {
+        "fish": 18,
+        "salt": 14,
+        "fresh_water": 12,
+        "silkweed": 10,
+        "fruit": 10,
+        "timber": 10,
+        "raw_gems": 8,
+        "herbs_common": 6,
+        "resin_oil": 6,
+        "poultry": 4,
+        "clay": 2
+      }
+    }
+  ]
+}
+
+

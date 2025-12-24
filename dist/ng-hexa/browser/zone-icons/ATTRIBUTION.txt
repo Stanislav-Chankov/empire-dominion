@@ -1,0 +1,20 @@
+Zone type icons
+
+Source: Material Design Icons (MDI) by Pictogrammers
+Bundled via npm package: @mdi/svg
+
+License: Apache License 2.0
+
+Files:
+- public/zone-icons/1.svg  (from grain.svg)
+- public/zone-icons/2.svg  (from pine-tree.svg)
+- public/zone-icons/3.svg  (from terrain.svg)
+- public/zone-icons/4.svg  (from diamond-stone.svg)
+- public/zone-icons/5.svg  (from water.svg)
+- public/zone-icons/6.svg  (from waterfall.svg)
+- public/zone-icons/7.svg  (from cactus.svg)
+- public/zone-icons/8.svg  (from snowflake.svg)
+- public/zone-icons/9.svg  (from volcano.svg)
+- public/zone-icons/10.svg (from fish.svg)
+
+
